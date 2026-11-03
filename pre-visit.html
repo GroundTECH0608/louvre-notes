@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ルーヴル展　簡単にまとめてみた</title>
 <style>
-:root{--bg:#faf7f2;--card:#fff;--ink:#2a2622;--sub:#6f655c;--line:#e3dcd0;
---work:#7b2d3a;--west:#5b4b8a;--jpev:#2d5a6b;--jpart:#8a6a1f}
+:root{--bg:#ffffff;--card:#fff;--ink:#2a2622;--sub:#6f655c;--line:#e3e3e3;
+--work:#b5302a;--west:#5b4b8a;--jpev:#2d5a6b;--jpart:#8a6a1f}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1917;--card:#252220;--ink:#efe9e0;--sub:#a79d92;--line:#3a3530;
---work:#e0909e;--west:#b6a6ec;--jpev:#80bccf;--jpart:#dcbc6e}}
+--work:#ff8f84;--west:#b6a6ec;--jpev:#80bccf;--jpart:#dcbc6e}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
@@ -33,10 +33,18 @@ time{display:block;font-weight:800;font-size:1.05rem;margin-bottom:4px}
 .card img{display:block;width:100%;height:auto;max-height:62vh;object-fit:contain;border-radius:8px;margin:0 0 10px;background:#0001}
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;margin:0 0 4px;background:#0001}
 .card .scroll img{width:auto;max-width:none;height:170px;max-height:none;margin:0;border-radius:0}
-.hook{margin:8px 0 0;padding:8px 10px;border-radius:8px;background:#b08a3e1f;font-size:.85rem}
+.hook{margin:8px 0 0;padding:8px 10px;border-radius:8px;background:#e0a1001f;font-size:.85rem}
 .notes{margin:28px 0 0;padding:12px 0 0;border-top:1px solid var(--line);font-size:.78rem;color:var(--sub);line-height:1.65}
 .notes li{margin:0 0 4px;padding:0}.notes li::before{display:none}.notes{list-style:disc;padding-left:18px;border-left:0}
 
+.ptags{display:flex;gap:8px;justify-content:center;margin:6px 0 12px}
+.ptag{border:1.5px solid #bdbdbd;border-radius:6px;padding:1px 10px;font-size:.76rem;color:#555;font-weight:700}
+.ptag.red{border-color:#c23b30;color:#c23b30}
+@media (prefers-color-scheme:dark){.ptag{border-color:#666;color:#bbb}.ptag.red{border-color:#ff8f84;color:#ff8f84}}
+.ctr{text-align:center}
+h1.ctr{font-size:1.45rem;margin:0 0 6px}
+.psub{color:var(--sub);font-weight:700;margin:0 0 2px;font-size:.95rem}
+.pdate{font-size:.88rem;margin:0 0 16px}
 .topimg{margin:-20px -16px 16px}
 .topimg img{display:block;width:100%;height:auto}
 .topimg figcaption{padding:4px 16px 0;font-size:.68rem;color:var(--sub);text-align:right}
@@ -51,12 +59,29 @@ p{margin:0 0 10px}
 .mini .qq{display:block;margin-top:8px}
 .mini .qq::before{content:"・";color:var(--work);font-weight:800}
 .wip{border:2px dashed var(--line);border-radius:12px;padding:14px;color:var(--sub);font-size:.9rem}
+
+/* ===== 美術館に入った雰囲気（予習メモ）：常に暗い展示室 ===== */
+:root{--bg:#1a110b;--card:#221710;--ink:#f3e9dc;--sub:#b9a995;--line:#3d2c20;--work:#ee8f84;--west:#b9aaf2;--jpev:#83c4da;--jpart:#e8bb55}
+body{background:radial-gradient(130% 55% at 50% 0%,#33200f 0%,#1a110b 62%) fixed;color:var(--ink)}
+h1,h2,.kicker{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+h1{letter-spacing:.06em;font-weight:700}
+h2{color:#f6dfa6;letter-spacing:.04em;border-top:1px solid #5a431d}
+.kicker{color:#e0a100;letter-spacing:.2em;font-size:.72rem;font-weight:700}
+.mini{background:linear-gradient(180deg,#2a1c13,#221710);border:1px solid #4a3523;border-left:3px solid #e0a100;border-radius:4px;box-shadow:0 6px 18px #0008}
+.mini b{color:#f6dfa6}
+.card{background:#221710;border:1px solid #3f2d20;border-radius:6px}
+.card img{border:2px solid #c99a2e;padding:5px;background:#0d0805;box-shadow:0 0 0 1px #5a431d,0 14px 28px #000a;border-radius:2px}
+.topimg img{border:0;padding:0;box-shadow:0 18px 40px #000a}
+.chips{background:#1a110b}
+.hook{background:#e0a1001f;color:#f3e9dc}
+.notes,.notes a{color:#a89683}
+.wip{border-color:#4a3523}
 </style>
 </head>
 <body>
 <main>
 <figure class="topimg"><img src="images/ogp-banner.jpg" alt="ルーヴル美術館展 ルネサンス" width="1920" height="1080"><figcaption>© GrandPalaisRmn (musée du Louvre) / Michel Urtado</figcaption></figure>
-<p class="kicker">ルーヴル展 ルネサンス</p>
+<p class="kicker">LOUVRE ／ RENAISSANCE</p>
 <h1>簡単にまとめてみた</h1>
 <p class="lead">5分ほどで読めます。</p>
 
