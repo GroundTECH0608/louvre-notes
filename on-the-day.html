@@ -201,7 +201,7 @@ var PRE = {"I 旅":"①","II 技法の革新と洗練":"②","III 古代への�
 function jumps(ws){ return ws.length ? '<div class="jumps">'+ws.map(function(n){return '<button data-g="'+n+'">'+n+'</button>';}).join("")+'</div>' : ""; }
 function bridgeHtml(sec, si){
   var c = BR[sec]; if(!c) return "";
-  var h = '<div class="bridge"><span class="lbl">予習メモ '+c.pre+'「'+esc(c.pre_title)+'」とのつながり</span>';
+  var h = '<div class="bridge"><span class="lbl">まとめ '+c.pre+'「'+esc(c.pre_title)+'」とのつながり</span>';
   c.items.forEach(function(it, j){
     var id = si+"_"+j;
     h += '<div class="bq"><p class="q">'+esc(it.q)+'</p>'
@@ -241,7 +241,7 @@ function card(w){
   var si = ORDER.indexOf(w.section);
   var ng = !!w.no_guide;
   var h = '<article class="card'+(ng?' noguide':'')+'" id="w'+w.no+'" data-no="'+w.no+'" data-s="'+si+'" data-buzz="'+(w.buzz||0)+'">';
-  h += '<div class="head"><div class="num">'+w.no+'</div><div><h3>'+esc(w.title)+'</h3><p class="meta"><span class="chip2">予習メモ '+PRE[w.section]+'</span>'+esc(w.who)+(w.date?' ／ '+esc(w.date):'')+'</p></div></div>';
+  h += '<div class="head"><div class="num">'+w.no+'</div><div><h3>'+esc(w.title)+'</h3><p class="meta"><span class="chip2">まとめ '+PRE[w.section]+'</span>'+esc(w.who)+(w.date?' ／ '+esc(w.date):'')+'</p></div></div>';
   var im = DATA.images[String(w.no)];
   if(im){ h += '<figure class="fig" style="margin-bottom:0"><img src="'+esc(im.src)+'" alt="'+esc(w.title)+'" loading="lazy">'+(im.note?'<figcaption>'+esc(im.note)+'</figcaption>':'')+'</figure>'; }
   if(ng){
