@@ -85,8 +85,14 @@ h2{color:#f6dfa6;letter-spacing:.04em;border-top:1px solid #5a431d}
 .toc a:first-of-type{border-top:0}
 .toc a span{color:#e0a100;font-weight:800;min-width:1.2em}
 h2{scroll-margin-top:14px}
-.tld>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:#e0a100;font-weight:700;border:1px solid #4a3523;border-radius:6px;padding:0 14px;background:#221710}
-.tld[open]>summary{margin-bottom:10px}
+.tld{margin:14px 0}
+.tld>summary{cursor:pointer;list-style:none;min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#1a110b;font-weight:800;font-size:1.05rem;letter-spacing:.06em;border:2px solid #f0c040;border-radius:8px;padding:0 18px;background:linear-gradient(180deg,#f0c040,#d9a21b);box-shadow:0 0 0 1px #5a431d,0 8px 20px #000a}
+.tld>summary::-webkit-details-marker{display:none}
+.tld>summary::after{content:"▼";font-size:.9rem}
+.tld[open]>summary::after{content:"▲"}
+.tld[open]>summary{margin-bottom:12px}
+@media (prefers-reduced-motion:no-preference){.tld:not([open])>summary{animation:tldglow 2.4s ease-in-out infinite}}
+@keyframes tldglow{0%,100%{box-shadow:0 0 0 1px #5a431d,0 8px 20px #000a}50%{box-shadow:0 0 0 1px #5a431d,0 0 18px 3px #e0a10099}}
 .chips{flex-wrap:nowrap;overflow-x:auto;gap:6px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;white-space:nowrap;padding:0 10px;font-size:.74rem;min-height:40px}
@@ -134,7 +140,7 @@ h2{scroll-margin-top:14px}
 <h2 id="s4">4. 年表</h2>
 <p class="lead">種類別に絞り込めます。</p>
 
-<details class="tld"><summary>年表を開く</summary><div class="tlwrap"><div class="chips" id="chips">
+<details class="tld"><summary>年表を開く（西洋と日本を並べて見る）</summary><div class="tlwrap"><div class="chips" id="chips">
   <button class="chip work" data-k="work" aria-pressed="true">作品</button>
   <button class="chip west" data-k="west" aria-pressed="true">西洋の出来事</button>
   <button class="chip jpev" data-k="jpev" aria-pressed="true">日本の出来事</button>
