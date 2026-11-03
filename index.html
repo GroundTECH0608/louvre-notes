@@ -20,6 +20,7 @@ a.card{display:block;margin:14px 16px 0;padding:18px 18px;background:var(--card)
 a.card b{display:block;font-size:1.1rem}
 a.card span{display:block;color:var(--sub);font-size:.88rem;margin-top:2px}
 a.card::after{content:"→";float:right;color:var(--gold);font-size:1.3rem;margin-top:-34px}
+a.card.ext::after{content:"↗"}
 </style>
 </head>
 <body>
@@ -28,7 +29,24 @@ a.card::after{content:"→";float:right;color:var(--gold);font-size:1.3rem;margi
 <figure style="margin:0"><img src="images/ogp-banner.jpg" alt="ルーヴル美術館展 ルネサンス" width="1920" height="1080" style="display:block;width:100%;height:auto"><figcaption style="padding:4px 16px 0;font-size:.68rem;color:var(--sub);text-align:right">© GrandPalaisRmn (musée du Louvre) / Michel Urtado</figcaption></figure>
 <p class="lead">時間あったら見てみて〜</p>
 <a class="card" href="pre-visit.html"><b>簡単にまとめてみた</b><span>5分ほどで読めます</span></a>
+<div id="day"></div>
+<a class="card ext" href="https://www.nact.jp/exhibition_special/2026/louvre2026/" target="_blank" rel="noopener"><b>展覧会の公式ページ</b><span>会期・開館時間・チケット（国立新美術館）</span></a>
 <p style="margin:28px 20px 0;color:var(--sub);font-size:.74rem;line-height:1.7">プレビュー画像：国立新美術館 展覧会公式サイトのバナー（© GrandPalaisRmn (musée du Louvre) / Michel Urtado）。</p>
 </main>
+<script>
+(function(){
+  var me = false;
+  try { me = new URLSearchParams(location.search).has("me"); } catch(e) {}
+  var d = new Date(Date.now() + 9 * 3600 * 1000);
+  var ymd = d.getUTCFullYear() * 10000 + (d.getUTCMonth() + 1) * 100 + d.getUTCDate();
+  if (me || ymd >= 20261110) {
+    var a = document.createElement("a");
+    a.className = "card";
+    a.href = "on-the-day.html" + (me ? "?me" : "");
+    a.innerHTML = "<b>当日メモ</b><span>会場でスマホで開く。56点の解説つき</span>";
+    document.getElementById("day").appendChild(a);
+  }
+})();
+</script>
 </body>
 </html>
