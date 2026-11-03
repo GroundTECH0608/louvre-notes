@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ルーヴル展 当日メモ</title>
+<style>
+:root{
+  --bg:#f5efe6;--card:#fffdf9;--ink:#2b2420;--sub:#7b6f66;--line:#e6dccf;
+  --wine:#7b2d3a;--gold:#b08a3e;--shadow:0 1px 2px #2b242014,0 8px 24px #2b24200f;
+  --hero1:#4a1824;--hero2:#7b2d3a;--herotext:#fbf3e8;
+  --s1:#2d6a7a;--s2:#a8742a;--s3:#3f7a5a;--s4:#7b2d3a;--s5:#4a4a8f;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#15110e;--card:#201a16;--ink:#f0e8de;--sub:#aa9e92;--line:#382f28;
+  --wine:#e0909e;--gold:#d4b36a;--shadow:0 1px 2px #0006,0 8px 24px #0004;
+  --hero1:#2a0f16;--hero2:#5a2230;--herotext:#fbf3e8;
+  --s1:#7fbccf;--s2:#e0b06a;--s3:#86c4a0;--s4:#e0909e;--s5:#a9a9ee;
+}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.75 -apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+main{max-width:600px;margin:0 auto;padding:0 0 calc(64px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--hero1),var(--hero2));color:var(--herotext);
+  padding:calc(36px + env(safe-area-inset-top)) 20px 28px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+  border:1px solid #fbf3e833;box-shadow:0 0 0 24px #fbf3e80d,0 0 0 56px #fbf3e808}
+.hero .eyebrow{font-size:.78rem;letter-spacing:.14em;opacity:.8;margin:0 0 6px}
+.hero h1{margin:0;font-size:1.9rem;line-height:1.3;letter-spacing:.04em;font-weight:700}
+.hero .sub{margin:10px 0 0;font-size:.9rem;opacity:.88}
+.rule{width:44px;height:2px;background:var(--gold);margin:14px 0 0;border:0}
+
+/* progress */
+.prog{margin:18px 16px 0;background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.prog .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.prog b{font-size:1.5rem}
+.prog small{color:var(--sub)}
+.bar{height:6px;border-radius:99px;background:var(--line);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--wine));transition:width .35s}
+.favline{margin-top:10px;font-size:.88rem;color:var(--sub)}
+.favline strong{color:var(--wine)}
+
+/* panel (route etc.) */
+details.panel{margin:14px 16px 0;background:var(--card);border-radius:14px;box-shadow:var(--shadow)}
+details.panel>summary{list-style:none;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;min-height:48px}
+details.panel>summary::-webkit-details-marker{display:none}
+details.panel>summary::after{content:"＋";color:var(--gold);font-size:1.2rem}
+details.panel[open]>summary::after{content:"－"}
+.panel .body{padding:0 16px 16px;font-size:.93rem}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.tl li:first-child{border-top:0}
+.tl time{font-weight:800;color:var(--wine);font-variant-numeric:tabular-nums}
+.panel .foot{margin:10px 0 0;color:var(--sub);font-size:.82rem}
+.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.grid button{aspect-ratio:1;border:1px solid var(--line);background:transparent;border-radius:10px;font-weight:700;font-size:.85rem;padding:0;min-height:40px}
+.grid button.f{background:var(--gold);color:#2b2420;border-color:var(--gold)}
+.grid button.v{outline:2px solid var(--wine);outline-offset:1px}
+
+/* tabs */
+.tabs{position:sticky;top:0;z-index:10;background:var(--bg);padding:10px 16px 10px;margin-top:14px;
+  display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:0 16px;min-height:42px;font-size:.88rem;font-weight:700;white-space:nowrap}
+.tab[aria-pressed="true"]{background:var(--wine);color:#fff;border-color:var(--wine)}
+@media (prefers-color-scheme:dark){.tab[aria-pressed="true"]{color:#1a1210}}
+
+/* section header */
+.sec{margin:30px 16px 0;--c:var(--s1)}
+.sec[data-s="1"]{--c:var(--s2)}.sec[data-s="2"]{--c:var(--s3)}.sec[data-s="3"]{--c:var(--s4)}.sec[data-s="4"]{--c:var(--s5)}
+.sec .roman{font-size:2.6rem;line-height:1;color:var(--c);opacity:.9;font-weight:700}
+.sec h2{margin:2px 0 6px;font-size:1.25rem;line-height:1.4}
+.sec p{margin:0;color:var(--sub);font-size:.9rem}
+.sec::after{content:"";display:block;height:2px;margin-top:14px;background:linear-gradient(90deg,var(--c),transparent)}
+
+/* card */
+.card{--c:var(--s1);margin:14px 16px 0;background:var(--card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border-top:4px solid var(--c);scroll-margin-top:70px;transition:box-shadow .3s,opacity .2s}
+.card[data-s="1"]{--c:var(--s2)}.card[data-s="2"]{--c:var(--s3)}.card[data-s="3"]{--c:var(--s4)}.card[data-s="4"]{--c:var(--s5)}
+.card.pulse{box-shadow:0 0 0 3px var(--gold),var(--shadow)}
+.card.found{opacity:.97}
+.head{display:flex;gap:12px;padding:14px 16px 6px;align-items:flex-start}
+.num{flex:none;min-width:52px;height:52px;border-radius:14px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.35rem;padding:0 6px}
+@media (prefers-color-scheme:dark){.num{color:#1a1210}}
+.head h3{margin:0;font-size:1.05rem;line-height:1.5}
+.meta{margin:2px 0 0;color:var(--sub);font-size:.8rem;line-height:1.5}
+.fig{margin:8px 16px 0}
+.fig img{display:block;width:100%;height:auto;max-height:62vh;object-fit:contain;border-radius:10px;background:#0001}
+.fig figcaption{font-size:.74rem;color:var(--sub);margin-top:4px}
+.lbl{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;color:var(--c);margin-bottom:2px}
+.blk{padding:10px 16px 0;font-size:.94rem}
+.blk p{margin:0}
+.reveal{width:calc(100% - 32px);margin:12px 16px 0;min-height:46px;border:1.5px dashed var(--gold);background:transparent;border-radius:12px;font-weight:700;color:var(--ink)}
+.reveal[aria-expanded="true"]{border-style:solid;background:#b08a3e18}
+.twist{margin:0 16px;padding:12px 14px;border-radius:0 0 12px 12px;background:#b08a3e18;font-size:.93rem;border:1.5px solid var(--gold);border-top:0}
+.twist[hidden]{display:none}
+.talk{margin:12px 16px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--c) 11%,transparent);border-left:4px solid var(--c);font-size:.93rem}
+.talk .lbl{display:block}
+.sub details{margin:10px 16px 0;font-size:.88rem}
+.sub summary{cursor:pointer;font-weight:700;color:var(--sub);min-height:36px}
+.acts{display:flex;gap:8px;align-items:center;padding:14px 16px 16px;flex-wrap:wrap}
+.acts button{min-height:44px;padding:0 14px;border-radius:99px;border:1.5px solid var(--line);background:transparent;font-size:.86rem;font-weight:700}
+.acts .found-btn[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#2b2420}
+.acts .fav-btn[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+@media (prefers-color-scheme:dark){.acts .fav-btn[aria-pressed="true"]{color:#1a1210}}
+.stars{margin-left:auto;font-size:.74rem;color:var(--sub);text-align:right;line-height:1.3}
+.stars b{color:var(--gold);letter-spacing:.1em;font-size:.9rem}
+.card.noguide{border-top-style:dashed}
+.card.noguide .note-only{color:var(--sub);font-size:.88rem}
+.empty{margin:40px 16px;text-align:center;color:var(--sub)}
+.credit{margin:36px 16px 0;font-size:.76rem;color:var(--sub);line-height:1.7}
+.bridge{margin-top:14px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--c) 10%,transparent);border-left:4px solid var(--c)}
+.bridge .q{margin:2px 0 10px;font-weight:700;font-size:.95rem;color:var(--ink)}
+.bridge .ansbtn{min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid var(--c);background:transparent;font-weight:700;font-size:.88rem}
+.bridge .ansbtn[aria-expanded="true"]{background:var(--c);color:#fff}
+@media (prefers-color-scheme:dark){.bridge .ansbtn[aria-expanded="true"]{color:#1a1210}}
+.bridge .ans{margin-top:10px;font-size:.92rem;color:var(--ink)}
+.bridge .ans[hidden]{display:none}
+.sec .bridge .ans p{color:var(--ink);font-size:.92rem}
+.jumps{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.jumps button{min-width:44px;min-height:36px;border-radius:99px;border:1.5px solid var(--c,var(--gold));background:transparent;font-weight:800;font-size:.82rem;padding:0 10px}
+.chip2{display:inline-block;font-size:.68rem;font-weight:800;border:1px solid var(--c);color:var(--c);border-radius:99px;padding:0 8px;margin:0 6px 0 0;line-height:1.7}
+.chain .st{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:6px 0}
+.chain .dot{width:28px;height:28px;border-radius:50%;background:var(--gold);color:#2b2420;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.chain .arrow{color:var(--gold);padding-left:8px;line-height:1;font-size:1.1rem}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <p class="eyebrow">LOUVRE ／ RENAISSANCE</p>
+  <h1 class="serif">ルーヴル展<br>当日メモ</h1>
+  <hr class="rule">
+  <p class="sub">作品番号は、会場の公式ガイドと同じです。気になる作品の前で、開いてみてください。</p>
+</header>
+
+<section class="prog" aria-label="進み具合">
+  <div class="row"><div><b id="cnt">0</b><small> ／ 56 見つけた</small></div><small id="pct"></small></div>
+  <div class="bar"><i id="barfill"></i></div>
+  <div class="favline" id="favline">「あなたの1点」は、まだ決まっていません。</div>
+</section>
+
+<details class="panel">
+  <summary>回り方（15:00入場の場合）</summary>
+  <div class="body">
+    <ol class="tl">
+      <li><time>15:00</time><span>まず1周、流して見る（約20分）。気になった作品の番号だけ覚えておく。</span></li>
+      <li><time>15:20</time><span>2周目。気になった3点前後の前で、このメモを開く（約70分）。</span></li>
+      <li><time>16:30</time><span>レオナルド《女性の肖像》（56）を落ち着いて。余裕があれば、好きな作品へもう一度。</span></li>
+      <li><time>17:00</time><span>退出。感想は「あなたの1点」から。</span></li>
+    </ol>
+    <p class="foot">閉館は18:00（最終入場17:30）です。展示順は、公式の出品リストの順番と違うことがあります。</p>
+  </div>
+</details>
+
+<details class="panel">
+  <summary>番号から探す</summary>
+  <div class="body"><div class="grid" id="grid"></div>
+  <p class="foot">金色は「見つけた」、枠線は「あなたの1点」です。</p></div>
+</details>
+
+<div id="chain"></div>
+
+<nav class="tabs" id="tabs" aria-label="絞り込み"></nav>
+
+<div id="list"></div>
+
+<p class="credit">解説は、国立新美術館の公式ガイド（展示室内の解説）の内容をもとにまとめています。公式ガイドに解説のない作品（破線の枠）は、番号が出品リストの並びからの推定です。<br>作品画像は Wikimedia Commons より。51番の写真は Sailko 撮影（CC BY 3.0）。</p>
+</main>
+
+<script>
+var DATA = {"works": [{"no": 1, "section": "I 旅", "title": "ヴェネツィア共和国の使節団を迎えるダマスクス総督", "who": "ヴェネツィアの画家(Venetian painter)", "date": "1511年頃", "look": "背を向けた通訳が、低い台に座った総督に使節たちを紹介している。左側に赤いガウンの男性1人と黒い長衣の男性5人がヴェネツィアの使節。", "note": "当時のダマスクスは、エジプトやシリアを支配したマムルーク朝の州都の一つ。外交の場面で、貿易で利害が一致していたマムルーク朝とヴェネツィアは友好関係を保つ必要があった。", "twist": "描かれたのは友好的な謁見だが、制作された1511年頃は、ダマスクス駐在のヴェネツィア領事がマムルーク朝の疑念を招き、両国の緊張が高まっていた頃だと推測されている。", "talk": "総督と使節、この場面の主導権を握っているのはどっちだと思う?", "buzz": 3, "reason": "穏やかな絵と裏の政治的緊張のギャップはあるが、人物や技法の話題は少なめ", "source": [3]}, {"no": 2, "section": "I 旅", "title": "旧約聖書の場面「ヨブの物語」と「ロトの物語」をあしらった天文機器一式", "who": "南ドイツ", "date": "1565年", "look": "小箱の外側に旧約聖書の2つの物語場面が彫られている。", "note": "水平式日時計や羅針盤など、時刻や方角を測る機器一式が入った小箱。こうした器具は16世紀後半の南ドイツで盛んに作られ、科学と芸術の発展が旅の用具にも表れている。", "twist": null, "talk": "これ、旅のお供に自分も持ち歩きたいと思う?スマホとどっちが頼りになる?", "buzz": 2, "reason": "機能と彫刻の組み合わせは面白いが逸話は少ない", "source": [4]}, {"no": 3, "section": "I 旅", "title": "ゾウ", "who": "アウクスブルク", "date": "1590年頃", "look": null, "note": "ブロンズ製のゾウで、ドイツ中部ヘッセン城の庭園の噴水の一部だった。城主のブラウンシュヴァイク゠ヴォルフェンビュッテル公が1607年に作らせた噴水で、5段の水盤にそれぞれ水を噴く動物の像が飾られ、ゾウは上から2段目にあったようだ。異国の動物はルネサンス期の王侯貴族に特に好まれた装飾モチーフだった。", "twist": "噴水そのものは現存せず、当時の様子は版画で知るしかない。", "talk": "もし自分の庭に噴水を作るなら、どんな動物に水を噴かせたい?", "buzz": 3, "reason": "庭の噴水の一部という意外な出自。ただし解説は短め", "source": [5]}, {"no": 4, "section": "I 旅", "title": "サイ", "who": "アルブレヒト・デューラー(Nuremberg, 1471 – Nuremberg, 1528)", "date": "1515年(初版)", "look": "背中に本来ない小さな角が生え、皮膚が甲冑のようになっている。", "note": "木版画。デューラーは二度イタリアを訪れ、学んだ技法を取り入れた一方、イタリアの芸術家もその高度な版画技法から大きな影響を受けた。1515年にポルトガル王のためインドから運ばれ、リスボン港に着いたサイの記述とスケッチだけを頼りに描かれた。", "twist": "デューラーはサイを一度も見たことがなかった。それでも大人気になり、死後に7回も重版され、ヨーロッパの博物学書の挿絵にたびたび転用され、そうした書物は江戸時代の18世紀後半に日本にも伝わった。", "talk": "見たことのない生き物を言葉だけで描けと言われたら、あなたはどこまで再現できそう?", "buzz": 5, "reason": "実物を見ずに描いたのに大ヒット、江戸時代の日本にも届くという意外性と現代の「伝言ゲーム」感", "source": [6]}, {"no": 5, "section": "I 旅", "title": "32歳の男性の肖像", "who": "ヤン・ファン・スコーレル(Schoorl, 1495 – Utrecht, 1562)", "date": "1521年", "look": "モデルは斜めを向き、背後に風景がある。人物はややクローズアップで、髪やひげの質感が柔らかい。", "note": "スコーレルは1518年にイタリアへ出発し、ヴェネツィアやローマに滞在して1524年にユトレヒトへ戻った。この作品はヴェネツィア滞在中の制作で、斜め向きと背景の風景は北方からイタリアに広まった形式、近めの構図と柔らかな質感はヴェネツィア絵画の影響だという。", "twist": null, "talk": "この男性、どんな性格や職業に見える?", "buzz": 2, "reason": "北とイタリアの融合という見どころはあるが逸話は少ない", "source": [7]}, {"no": 6, "section": "I 旅", "title": "アントニオ・デ・コバルビアス・イ・レイバ(1524–1602年)の肖像", "who": "エル・グレコ(Candia, 1541 – Toledo, 1614)", "date": "1597–1600年頃", "look": "こけた頬、目の下のくま、額のしわなど、老練な顔立ちが細かく描かれている。", "note": "クレタ島生まれのエル・グレコは、イタリアを経て30代半ばの1577年にスペインのマドリードへ向かい、最終的にトレドに居を定めた。描かれたコバルビアスはトレド出身の有名な法学者で人文主義者。17歳年下のグレコとは古代の文献やギリシア語への関心を分かち合い、親交を結んだ。", "twist": "画家と描かれた人は17歳差の友人同士で、おそらくコバルビアスの生前に描かれたと考えられている。", "talk": "親しい友人を描くなら、くまやしわまで正直に描いてほしい?それとも少し盛ってほしい?", "buzz": 3, "reason": "友人同士という人間くささはあるが、突飛な話ではない", "source": [8]}, {"no": 7, "section": "I 旅", "title": "東から望むサン゠ヴァリエ", "who": "Hendrik Gijsmans(Mechelen, circa 1544 – Frankenthal, circa 1611/1612)", "date": "1567年頃", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 8, "section": "I 旅", "title": "座って素描する人物のいるローマの眺望", "who": "ジョヴァンニ・バッティスタ・ナルディーニ(Florence, 1535 – Florence, 1591)", "date": "1560–1561年", "look": "戸外で古代遺跡を前にデッサンする画家の姿が描かれている。遠景の建造物にはアルファベットが振られ、画面下に「A パラティーノの丘」「B コロッセオ」などの名称が書かれている。", "note": "フィレンツェの画家ナルディーニは腕を磨くため1560年秋から1561年春にローマに滞在し、遺跡や古代彫刻を素描した。約60点のこれらの素描は当時1つの素描帳にまとまっていたが、今は世界各地の美術館や個人コレクションに分散している。", "twist": "これは「素描する人を描いた素描」で、素描帳の60点ほどは今ばらばらになっている。", "talk": "観光地で絵を描いている人を見かけたら、後ろからのぞいてみたくなる?", "buzz": 3, "reason": "絵の中の絵、ガイド付きの風景というおもしろさ", "source": [9]}, {"no": 9, "section": "I 旅", "title": "装飾レリーフ 3頭のイルカ・2匹のタツノオトシゴ・水盤・2本の豊穣の角・炎の上がる鉢が左右対称に組み合わされた灯明台", "who": "ガイヨンのイタリア人装飾彫刻家の工房(フランス、ノルマンディー)", "date": "1510年頃", "look": null, "note": "フランス・ノルマンディーのガイヨン城の礼拝堂の祭壇彫刻の一部だった。城は中世には要塞で、15世紀末に城主となったジョルジュ・ダンボワーズ枢機卿(1460–1510年)がイタリアから建築家や芸術家を呼び寄せて改築し、フランス初のルネサンス様式の城にした。礼拝堂の装飾には当時イタリアで流行した古代風のモチーフが取り入れられている。", "twist": "中世の要塞が、フランス初のルネサンス様式の城に作り替えられた。", "talk": "古い要塞をおしゃれにリノベするなら、あなたはまずどこに手を入れる?", "buzz": 3, "reason": "要塞→ルネサンスの城という「リノベ」の話は現代につながる", "source": [10]}, {"no": 10, "section": "I 旅", "title": "メダル 表:ルイ12世(1462–1515年) 裏:アンヌ・ド・ブルターニュ(1477–1514年)", "who": "Nicolas Leclerc(リヨンで活動、1484年から1507年)、Jean de Saint-Priest(リヨンで活動、1490年から1516年)の原型に基づく", "date": "1499年", "look": "表裏それぞれに、国王夫妻の横顔の肖像が刻まれている。", "note": "フランス国王ルイ12世と、その2番目の妃アンヌ・ド・ブルターニュの肖像メダル。ルネサンス期には君主が都市に入る時に盛大な祝典(入市式)が行われ、記念のメダルがしばしば作られた。このメダルはフランス南東部リヨンでの国王夫妻の入市式の記念。", "twist": null, "talk": "自分の結婚式や記念日をメダルにするなら、横顔と正面、どっちで残したい?", "buzz": 2, "reason": "記念メダルという位置づけの説明が中心", "source": [11]}, {"no": 11, "section": "I 旅", "title": "田園の合奏", "who": "南ネーデルラント?(出品リスト表記)", "date": "16世紀第1四半期", "look": "豪華な服装の男女が楽器を演奏し、足元に従者の若者と侍女がいる。手前の侍女はナシの実を持つ。女性は額の中央で分けた長い髪を後ろで一つにまとめ、後頭部にボンネットをかぶり、袖は取り外せるタイプでリボンや紐で身ごろに結ばれている。", "note": "壁を飾るタペストリーは保温効果があり、間仕切りにも使え、引っ越しの際に取り外して運べる実用品だった。この千花文様のタペストリーは、部屋の壁全体を覆うためにシリーズで作られ、貴族の生活に関わる場面が多かった。合奏を楽しむ恋人たちは、伝統的に愛の調和を意味するモチーフ。", "twist": "侍女が手にしたナシは実り豊かな結合の象徴で、この合奏が幸せな結末を迎えることを暗示している。髪型や服は1490年代に北イタリアで流行したもので、おそらく南ネーデルラント製のこの作品が流行の伝播を物語る。", "talk": "この2人、ナシの暗示どおり幸せになると思う?それとも…?", "buzz": 4, "reason": "ナシが暗示するものと、流行ファッションが国を越えて広まった話(第4章につながる)", "source": [12, 13]}, {"no": 12, "section": "I 旅", "title": "長持", "who": "フランス、プロヴァンス?(出品リスト表記)", "date": "1535–1570年", "look": null, "note": "長持はルネサンス期に身分を問わず最もよく使われた家具の一つ。華やかな浮彫りで飾られ、衣類や身の回りのものを収納して移動先に運べ、室内に置けば美しい家具になった。", "twist": null, "talk": "引っ越しのたびに運ぶなら、家具の中で何をいちばん大事にする?", "buzz": 2, "reason": "解説は短く、実用品としての説明が中心", "source": [14]}, {"no": 13, "section": "II 技法の革新と洗練", "title": "中央に突起のある丸皿「大地と海」", "who": "ピエール・クルテ(1544年から1568年までリモージュで活動、リモージュ、1581年2月以前)", "date": "1568年", "look": "大地の女神キュベレ、海の神ネプトゥヌス、二人の河神など神々が組み合わされている。裏面の中央にクルテの署名がある。", "note": "リモージュのエマイユ(金属にガラス質の彩料で絵付けして焼く技法)画家は、16世紀半ば以降、大皿や水差しなど儀式用の食器一式も手がけた。この丸皿はかつて水差しの受け皿だったようだ。戦車に乗るネプトゥヌスと一人の河神は、ラファエロの素描に基づく版画から着想を得ている。", "twist": "教養のある上流階級の人々は、食器の装飾を糸口に会話を楽しんだ。裏面の署名は芸術家としての自負を感じさせる。", "talk": "食事の席で、お皿の絵を話のタネにするとしたらどんな絵がいい?", "buzz": 3, "reason": "食器が会話の道具だったという、現代のおしゃれ食器にもつながる話", "source": [16]}, {"no": 14, "section": "II 技法の革新と洗練", "title": "装飾板「合奏」", "who": "レオナール・リモザンの工房(Limoges, 1505? – Limoges, 1575年1月から1577年2月の間)", "date": "1560年頃", "look": null, "note": "エマイユは、銅などの金属の素地にガラス質の彩料で絵付けをして焼き付ける技法。リモージュはルネサンス期にエマイユ芸術の中心地で、この作品はフランス王室から数々の重要な注文を受けた芸術家リモザンの工房で作られた。絵付けと焼成を何度か繰り返して多彩色に仕上げた。", "twist": null, "talk": "ガラスの絵の具を何度も焼いて重ねると聞いて、どのくらい根気が要ると思う?", "buzz": 2, "reason": "技法の説明が中心で逸話は少ない", "source": [17]}, {"no": 15, "section": "II 技法の革新と洗練", "title": "丸皿 プッチ家の紋章をあしらった「ローマの頽廃」", "who": "フランチェスコ・クサント・アヴェッリ(Urbino、1520年頃から1542年まで活動)", "date": "1532年", "look": "皿の中央にローマを表す女性の姿があり、ラファエロの素描に基づく版画《棘に傷つくヴィーナス》が転用されている。", "note": "素焼きの陶器に白い錫釉を施して絵付けするマヨリカ陶器は、版画の発展の影響を受けた。絵付師たちは優れた芸術家の版画から図像を自由に借用し、より複雑な絵柄を考案した。クサントは異なる版画から人物像を選び、組み合わせて新しい図像を創るのが得意だった。", "twist": "中央の「ローマ」は、有名な版画のヴィーナス像の転用。", "talk": "人の作品の「いいとこ取り」は、これはオマージュ?それともパクり?", "buzz": 3, "reason": "版画のコラージュという現代にも通じる話題", "source": [18]}, {"no": 16, "section": "II 技法の革新と洗練", "title": "棘に傷つくヴィーナス", "who": "16世紀イタリアの無名作家(Marco Dente〔Ravenna, circa 1493 – Rome, 1527〕とラファエロの原作に基づく)", "date": "16世紀前半", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)。なお、この版画の図像は別ページ(no.15、no.17)で、ラファエロの素描に基づく有名な版画として触れられている。", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 17, "section": "II 技法の革新と洗練", "title": "小像「身づくろいする女性」", "who": "バルテレミ・プリユール(Berzieux, 1536 – Paris, 1611)", "date": "1585–1600年", "look": "身をかがめて爪を切る女性の小さなブロンズ像。", "note": "ルネサンスの芸術家は中世にやや廃れていたブロンズ鋳造法を復活させた。16世紀には貴族や学者の書斎向きの小さなブロンズ像の流行がイタリアからヨーロッパ中に広まり、フランスではプリユールが特に女性の小像で人気を博した。", "twist": "元ネタはラファエロの素描に基づく版画《棘に傷つくヴィーナス》で、プリユールはそれを爪を切る女性に変えた。", "talk": "ヴィーナスが爪切りに変身。この「見立て」、あなたはアリ?ナシ?", "buzz": 4, "reason": "神話の女神が日常の所作に変身するという意外性", "source": [19]}, {"no": 18, "section": "II 技法の革新と洗練", "title": "丸皿「パリスの審判」", "who": "イタリア、ウルビーノ", "date": "1530–1535年", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 19, "section": "II 技法の革新と洗練", "title": "パリスの審判", "who": "マルカントニオ・ライモンディ(Sant'Andrea, circa 1480 – Bologna, circa 1534)、ラファエロ(Urbino, 1483 – Rome, 1520)の原作に基づく", "date": "1513–1518年頃", "look": null, "note": "ライモンディは同時代の芸術家の素描や古代彫刻に基づく銅版画を作り、複製版画という分野を開拓した。パリスがヴィーナスにリンゴを渡す神話の場面で、ラファエロは彼の版画を介して構想を広く伝え、ライモンディも名声を高めた。", "twist": "ラファエロの素描は失われてしまい、この版画が時代を超えて多くの芸術家に参照された。19世紀のマネの有名な《草上の昼食》(1863年)も、この版画に着想を得ている。", "talk": "オリジナルが失われて、コピーの方が有名になった作品、どう評価する?", "buzz": 5, "reason": "原画が失われ、複製が名作の元ネタになったという逆転と、マネという現代へのつながり", "source": [20]}, {"no": 20, "section": "II 技法の革新と洗練", "title": "幼子イエスを礼拝する聖母", "who": "アンドレア・デッラ・ロッビアとその工房(Florence, 1435 – Florence, 1525)", "date": "1480–1490年頃", "look": "色のついた釉薬で覆われた、光沢のある色鮮やかなテラコッタのレリーフ。", "note": "1430年代にルカ・デッラ・ロッビアが、色つきの釉薬でテラコッタを覆う技法を成功させた。美しいうえに、大理石やブロンズの彫刻より価格が控えめなため、瞬く間に人気となった。このレリーフはルカの甥アンドレアの工房の作品。", "twist": "大理石やブロンズより安価だったので、すぐ人気になった。", "talk": "色つきの彫刻と白い大理石、あなたは部屋に飾るならどっち?", "buzz": 2, "reason": "コスパで人気になったという話は面白いが短い", "source": [21]}, {"no": 21, "section": "II 技法の革新と洗練", "title": "「田園風陶法」による楕円水盤", "who": "フランス、おそらくパリ(ベルナール・パリシーの技法を継ぐ17世紀の工房)", "date": "1600–1650年", "look": "様々な生物と植物が、思わず触れたくなるようなリアルな質感で表されている。", "note": "パリシー(1510年頃–1590年)は16世紀半ばに、動植物から直接取った型で本物さながらの装飾を陶器に施す極めて特殊な陶器を生み出し、王妃カトリーヌ・ド・メディシスらを魅了した。ルネサンスは観察と理性で自然を解明しようとした時代で、パリシーの陶器はその時代精神を体現するという。", "twist": "儀式で使われたのか純粋に鑑賞用だったのか、正確な用途は今も分かっていない。", "talk": "この水盤、料理を盛るのは勇気がいる?それとも気にせず使う?", "buzz": 4, "reason": "リアルすぎる質感と、用途が不明という謎", "source": [22]}, {"no": 22, "section": "II 技法の革新と洗練", "title": "「田園風陶法」による水差し", "who": "フランス、おそらくパリ", "date": "1600–1650年", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 23, "section": "II 技法の革新と洗練", "title": "小像「カエル」", "who": "北イタリア?(出品リスト表記)", "date": "16世紀", "look": null, "note": "実際の動植物から取った石膏型でブロンズ像を作る技法は、イタリアからヨーロッパ中に広まり1560年代に最盛期を迎えた。こうした小像は建物や噴水の装飾にも、王侯貴族や学者の書斎の机上にも置かれた。カエルなどの小さな両生類は芸術家に好まれた素材。", "twist": "この作品は文鎮として使われていた。カエルの像にはインク壺や香炉など実用機能を備えたものもあった。", "talk": "机の上に置く小物、あなたならどんな動物にする?", "buzz": 4, "reason": "ありふれた生き物が高級な文鎮という、実用と遊び心のギャップ", "source": [23]}, {"no": 24, "section": "II 技法の革新と洗練", "title": "「ドラム」形の時計", "who": "モノグラム「HK」の時計職人(出品リスト表記)", "date": "1550–1575年", "look": "内部に精密な装置があり、外側に繊細な紋様が彫られている。", "note": "15世紀に発明されたぜんまいで機械装置の小型化が進み、持ち運べる懐中時計が開発された。時計産業の中心地はドイツ(特にニュルンベルクとアウクスブルク)とフランスで、美しい懐中時計が盛んに作られた。", "twist": null, "talk": "スマホがなかったら、あなたは時計に何を求める?デザイン?正確さ?", "buzz": 2, "reason": "技術革新の説明が中心", "source": [24]}, {"no": 25, "section": "III 古代へのまなざし", "title": "ヴィーナス", "who": "ジョヴァンニ・アントニオ・ダ・ブレシア(1490年から1520年までマントヴァとローマで活動)", "date": "1510年頃", "look": "長く垂らした髪、首飾り、ほつれたウールのような布が描かれている。", "note": "彼やライモンディが作った古代彫刻の版画は、ヨーロッパ各地で人物像を描く際の手本になった。表されているのは1509年にローマで発見されたヴィーナス像(マリブ、J. ポール・ゲッティ美術館)。", "twist": "忠実な再現ではなく、髪や首飾り、布はいずれも古代の女神ではなく聖書の登場人物マグダラのマリアの特徴で、キリスト教の図像が盛り込まれている。", "talk": "これは女神?それとも聖女?あなたの目にはどっちに見える?", "buzz": 4, "reason": "見た目はヴィーナスなのに、実はマグダラのマリアの特徴という意外な混在", "source": [26]}, {"no": 26, "section": "III 古代へのまなざし", "title": "小像「アンゲロナ」", "who": "イタリア(出品リスト表記)", "date": "16世紀", "look": null, "note": "ルネサンス期のイタリアの発掘では、古代ギリシアで鏡の持ち手や支柱に使われた小さなブロンズ小像が数多く見つかり、収集家の間で大人気となった。", "twist": "その心理につけこんで、16世紀のイタリアではこれらを模倣した贋作が盛んに作られた。この作品はその典型的な一例。", "talk": "贋作だと分かった上で、あなたはこの小像に価値を感じる?", "buzz": 5, "reason": "古代ブームにつけこんだ贋作という人間くさい逸話", "source": [27]}, {"no": 27, "section": "III 古代へのまなざし", "title": "古代の浅浮彫りに基づく模写「ヴィーナスとアドニス」", "who": "Biagio Pupini(Bologna, 1511年から1551年まで記録)", "date": "16世紀前半", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 28, "section": "III 古代へのまなざし", "title": "古代の浅浮彫りに基づく模写「マルクス・アウレリウス帝の凱旋」", "who": "16世紀イタリアの無名作家", "date": "16世紀後半", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 29, "section": "III 古代へのまなざし", "title": "マルス、ヴィーナスとキューピッド", "who": "ランベルト・スストリス(Amsterdam, circa 1510/1515 – Venice, after 1568)", "date": "1548–1552年", "look": "豪華な寝台に横たわるヴィーナス。右から恋人の軍神マルスが近づき、足元ではキューピッドが2羽の鳩に欲望をかきたてる矢を向けている。ヴィーナスの体はやや引き伸ばされている。", "note": "古代美術に着想を得た横たわるヴィーナスは、ティツィアーノら16世紀ヴェネツィアの画家が盛んに描いた画題。作者はアムステルダム出身で、イタリアに向かいヴェネツィアで巨匠ティツィアーノの工房に加わった。", "twist": "色使いにはティツィアーノの影響が見られるが、ヴィーナスの引き伸ばされた体つきは師の描き方とは異なる。", "talk": "師匠そっくりに描く弟子と、自分の癖を出す弟子、どっちを応援したい?", "buzz": 3, "reason": "師弟の違いが出る点は面白いが、全体は標準的", "source": [28]}, {"no": 30, "section": "III 古代へのまなざし", "title": "アポロンとマルシュアス", "who": "フランス", "date": "1550–1570年", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 31, "section": "III 古代へのまなざし", "title": "5人の天使に囲まれる聖母子", "who": "サンドロ・ボッティチェリ(Florence, circa 1445 – Florence, 1510)", "date": "1470年頃", "look": "地面に座って幼子イエスを膝に抱く聖母が、ザクロをイエスに差し出している。背景に白いユリと、花冠を手にした天使たち。衣服のドレープが巧みで体が立体的に見える。", "note": "工房を構えて間もない20代半ばの作と考えられている。この座る聖母の図像は「謙遜の聖母」と呼ばれ、15世紀前半にイタリアからヨーロッパに広まった。ザクロは原罪の象徴、白いユリは聖母の純潔の象徴。", "twist": "衣服の描き方には、古代彫刻の学習の反映が見てとれる。", "talk": "ザクロや白いユリ、絵の中のどのモチーフがいちばん気になる?", "buzz": 3, "reason": "モチーフの象徴読みが楽しい", "source": [29]}, {"no": 32, "section": "III 古代へのまなざし", "title": "豊穣、またはケレス", "who": "ラファエロ(Urbino, 1483 – Rome, 1520)とジュリオ・ロマーノ(Rome, 1499? – Mantua, 1546)", "date": "1517–1519年頃", "look": "古代の豊穣の女神ケレスの彫像が描かれ、片手に大きな「豊穣の角」を抱えている。", "note": "次のno.33とはもともと、持ち運べる小型の祭壇画を形づくっていた。この絵が覆いの役割を果たし、スライドさせると聖家族の絵が現れる仕組み。おそらくラファエロの最も有能な弟子ジュリオ・ロマーノが、師の構想に基づいて描いたと考えられている。", "twist": "絵をスライドさせるともう1枚の絵が現れる仕掛け付きの祭壇画だった。豊穣の角は、注文者ビッビエーナ枢機卿の紋章に豊穣の角があしらわれていたことと関連づけられる。", "talk": "仕掛けの祭壇画、からくりを知ってから見るのと、知らずに見るの、どっちが好き?", "buzz": 5, "reason": "スライドで絵が切り替わる仕掛けと、枢機卿の紋章に合わせた図像という意外な仕組み", "source": [30]}, {"no": 33, "section": "III 古代へのまなざし", "title": "聖母子と聖エリサベト、洗礼者聖ヨハネ、通称《小さな聖家族》", "who": "ラファエロ(Urbino, 1483 – Rome, 1520)とジュリオ・ロマーノ(Rome, 1499? – Mantua, 1546)", "date": "1517–1519年頃", "look": null, "note": "no.32の絵(ケレス)とセットになった、もう1枚の絵。持ち運べる小型の祭壇画で、ケレスの絵をスライドさせると現れる側にあたる。注文者はラファエロの重要なパトロン、ビッビエーナ枢機卿。", "twist": "覆いのケレスをスライドさせて初めて姿を見せる絵だった。", "talk": "隠されていた絵のほうが、本命だと思う?それとも覆いのほう?", "buzz": 4, "reason": "no.32とセットの仕掛けの片割れ。それ自体の解説は短い", "source": [30]}, {"no": 34, "section": "III 古代へのまなざし", "title": "三美神", "who": "ルカス・クラーナハ(父)(Kronach, 1472 – Weimar, 1553)", "date": "1531年", "look": "古代では後ろ姿が普通だった中央の女神が正面を向き、こちらに視線を投げかけている。裸身に、当時流行の帽子とネックレスを着けている。", "note": "クラーナハはザクセン選帝侯にヴィッテンベルクの宮廷へ招かれ、大工房を構えた。宮廷には古典古代に精通した学者や詩人が集い、その環境で神話画を数多く手がけた。ギリシア神話の三美神という古代彫刻の伝統的な形式を使いつつ独創性を発揮した。", "twist": "帽子やネックレスは16世紀当時の流行を反映していて、古代の女神というより現実の女性を思わせ、独特のエロティックな雰囲気を強めている。", "talk": "真ん中の女神がこちらを向いている。目が合ったとき、どんな気持ちになった?", "buzz": 4, "reason": "古代の約束事を破った「視線」と、現代的な装身具のギャップ", "source": [31]}, {"no": 35, "section": "III 古代へのまなざし", "title": "夫マウソロスの遺灰を飲もうとする王妃アルテミシア(?)", "who": "ニコロ・デッラバーテ(Modena, 1509? – Fontainebleau or Paris, 1571?)", "date": "1555年頃", "look": "女性の身体はやや引き伸ばされ、手つきは誇張された優雅さがある。杯を持っている。", "note": "フランソワ1世がフォンテーヌブロー城の装飾のためイタリアから二人の芸術家を招き(第一次フォンテーヌブロー派)、息子アンリ2世の治世にデッラバーテが呼び寄せられた。この作品はデッラバーテがプリマティッチョの構想に基づき描いたと考えられている。", "twist": "杯を持つことから、アルテミシアのほか神話や古代史の何人かの女性と結びつけられてきた。アルテミシアは貞節な妻で、王の死後その遺灰をワインに混ぜて飲み干したと伝えられている。", "talk": "亡き夫の遺灰をワインに混ぜて飲む。これは究極の愛?それとも…?", "buzz": 5, "reason": "優雅な絵に潜むぎょっとする逸話(伝承)と、題名に「?」が付く不確かさ", "source": [32]}, {"no": 36, "section": "III 古代へのまなざし", "title": "ガルバ帝の理想化された肖像", "who": "Gregorio di Lorenzo に帰属(Florence, circa 1436 – Forli, 1504?)", "date": "1470–1480年頃", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 37, "section": "III 古代へのまなざし", "title": "皇妃大ファウスティナの理想化された肖像(?)", "who": "Gregorio di Lorenzo に帰属(Florence, circa 1436 – Forli, 1504?)", "date": "1470–1480年頃", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 38, "section": "III 古代へのまなざし", "title": "シャルル9世の騎馬像", "who": "ジェルマン・ピロン(Paris, 1528 – Paris, 1590)の工房", "date": "1570–1574年頃", "look": "馬に乗った王のレリーフ(浮彫り)。", "note": "古代では騎馬像は最高権力者の栄誉を示す肖像形式で、典型は古代ローマのマルクス・アウレリウス帝の巨大なブロンズ騎馬像(173–176年、ローマ、カピトリーノ美術館)。ルネサンス以降の君主は、高さ4m以上のこの像を手本に、絵画・ブロンズ像・大理石のレリーフ・メダルなどで自らの肖像を作らせた。このレリーフはピロンの原型に基づき工房で作られたと推測され、騎手の顔立ちからシャルル9世(在位1560–1574年)と考えられている。", "twist": null, "talk": "王様が自分の肖像を馬に乗せたがる理由、あなたはどう想像する?", "buzz": 2, "reason": "手本の話が中心で、驚きの逸話は少ない", "source": [33]}, {"no": 39, "section": "III 古代へのまなざし", "title": "メダル 表:チェチリア・ゴンザーガ(1425–1451年) 裏:若い娘と一角獣", "who": "Pisanello(Pisa or Verona, before 1395 – Rome, circa 1455)に基づく", "date": "1447年", "look": "表に横顔の肖像、裏に一角獣を撫でる女性が表されている。", "note": "ローマ皇帝の横顔を刻んだ古代のコインに倣い、君主や貴族の肖像メダルが作られるようになった。北イタリアのマントヴァは15世紀半ばにメダル芸術の中心地となり、統治者ゴンザーガ家の人々が盛んに作らせた。チェチリアはマントヴァ侯ジャンフランチェスコ1世・ゴンザーガの娘。", "twist": "裏面の一角獣は処女性の象徴。", "talk": "自分のお守りメダルを作るなら、裏にどんな動物を入れる?", "buzz": 3, "reason": "動物の象徴性はあるが、解説は標準的", "source": [34]}, {"no": 40, "section": "III 古代へのまなざし", "title": "小型装飾板「アンタイオスを絞め殺すヘラクレス」", "who": "Moderno(おそらくGaleazzo Mondella、Verona, 1467 – Rome, before 1528)に帰属される原型に基づく", "date": "1540–1560年", "look": "絡みあう二人の人体の激しい動きと、苦痛にあえぐ表情。", "note": "ヘラクレスは、ルネサンス美術に頻出する神話の人物の一人。大地から生命力を得る巨人アンタイオスを持ち上げ、怪力で絞め殺す場面は特に人気を博した。", "twist": "芸術家にとってこの凄まじい格闘は、人体の動きや表情の描写を通して自らの技量の高さをアピールできる題材だった。", "talk": "ヘラクレスとアンタイオス、2人の筋肉と表情、どっちを見ちゃう?", "buzz": 3, "reason": "腕自慢の題材という「作り手の下心」が面白い", "source": [35]}, {"no": 41, "section": "III 古代へのまなざし", "title": "小像「ヘラクレスとアンタイオス」", "who": "Giambologna(Douai, 1529 – Florence, 1608)に基づく", "date": "18世紀", "look": null, "note": "no.40と同じく、ヘラクレスが巨人アンタイオスを持ち上げて絞め殺す場面の人気を物語る小像(解説はno.40と共通)。", "twist": null, "talk": "同じ場面でも、板のレリーフと立体の小像、どちらが迫力を感じる?", "buzz": 2, "reason": "解説はno.40と共通で、個別の逸話はなし", "source": [35]}, {"no": 42, "section": "IV 肖像芸術の隆盛", "title": "ミケランジェロの肖像", "who": "バッチョ・バンディネッリ(Florence, 1493 – Florence, 1560)に帰属", "date": "1522年頃", "look": "険しい顔で、鋭いまなざしをこちらに向けている。制作中の彫刻家を想起させる。", "note": "バンディネッリが描いたと考えられている。当時の彫刻家は、彫像を作る時の石くずや埃が髪につかないようターバンを巻くことがあり、この肖像画はそれを想起させる。絵画と建築にも秀でながら、あくまで彫刻家を自負したミケランジェロの個性をとらえているという。", "twist": "バンディネッリはミケランジェロを激しくライバル視していたことで有名だが、画面下の銘文によれば、ミケランジェロが47歳頃、まだ二人の関係が良好だった時期の作になる。", "talk": "ライバルが描いた肖像、あなたは「本当の姿」だと信じる?それとも盛られてると思う?", "buzz": 5, "reason": "宿敵がまだ仲良しだった頃に描いた肖像という人間ドラマ", "source": [37]}, {"no": 43, "section": "IV 肖像芸術の隆盛", "title": "コルレット(飾り襟)を着けた短髪の少年の肖像", "who": "Bernaert de Rijckere(Courtrai, circa 1535 – Antwerp, 1590)", "date": "1560–1565年頃", "look": null, "note": "解説なし(QRガイドにこの番号のページなし。作品名・作者・年は出品リスト抽出テキストによる。番号は出品リストの並び順から推定)", "twist": null, "talk": null, "buzz": null, "reason": null, "source": null, "no_guide": true, "number_inferred": true}, {"no": 44, "section": "IV 肖像芸術の隆盛", "title": "畝織りのボンネットと襞襟を身に着けた少女", "who": "フランス", "date": "1550–1574年", "look": "畝織りのボンネットと襞襟を着けた少女の胸像。", "note": "ルネサンス期の肖像では、子どもは当初、家族の一員として描かれるのが一般的だった。時代が下ると、子どもを単独で取り上げた肖像がぽつぽつ見られるようになる。この16世紀後半のフランス製の胸像のモデルは不明。", "twist": "耐久性に優れた大理石が使われていることから、おそらく少女の死後、その想い出をとどめるために制作されたものと考えられている。", "talk": "大切な人を永遠に残すなら、あなたはどんな素材と形を選ぶ?", "buzz": 4, "reason": "可愛い像が追悼のために作られたかもしれないという意外な背景", "source": [38]}, {"no": 45, "section": "IV 肖像芸術の隆盛", "title": "ケルンの商人で同市参事会員フィリップ・フォン・ガイル(1496–1558年)と5人の息子の肖像", "who": "バルトロメウス・ブロイン(父)(Cologne or Wesel, 1493 – Cologne, 1555)", "date": "1536–1537年頃(?)、額に記された年:1545年", "look": "ベルベットや毛皮など上質な素材の衣服。背景に紋章が描かれた紙が配されている。", "note": "ブロインは16世紀前半に主にケルンで活動し、当地の貴族に人気で、夫婦や家族の肖像を多数手がけた。当時ドイツやネーデルラントでは、家族の肖像はしばしば、父が息子たちを、母が娘たちを伴うかたちで描かれた。フィリップはケルン市の参事会員を務めた商人。", "twist": "背景の紙に描かれた紋章で、家柄が明確に示されている。", "talk": "自分の家族を描くなら、何を一緒に写して職業や地位を示したい?", "buzz": 3, "reason": "父と息子、母と娘と分けて描くという決まりが面白い", "source": [39]}, {"no": 46, "section": "IV 肖像芸術の隆盛", "title": "カタリーナ・フォン・ガイル(旧姓フォン・ミュルハイム、1540年没)と二人の娘の肖像", "who": "バルトロメウス・ブロイン(父)(Cologne or Wesel, 1493 – Cologne, 1555)", "date": "1536–1537年頃(?)、額に記された年:1545年", "look": "衣服は上質な素材で仕立てられ、背景には紋章が描かれた紙が配されている。", "note": "no.45とペアの肖像。母が娘たちを伴うかたちで描かれ、2点とも背景に紋章の紙が配されている。", "twist": "夫と息子たち、母と娘たちに分けて描くのが、当時のドイツやネーデルラントの家族肖像の形だった。", "talk": "家族を父側と母側に分けて飾るこのやり方、あなたはどう思う?", "buzz": 3, "reason": "2点セットでの家族肖像。個別の解説は少ない", "source": [39]}, {"no": 47, "section": "IV 肖像芸術の隆盛", "title": "ヤン・ヘリッツゾーン・ファン・エフモント(1470年頃–1523年)の肖像", "who": "ヤコプ・コルネリスゾーン・ファン・オーストザーネン(Oostzaan, 1470 – Amsterdam, 1533)、またはその息子ディルク・ヤコプスゾーン(Amsterdam, circa 1497 – Amsterdam, 1576)", "date": "1523年頃", "look": "典型的な四分の三正面観で、頭上に紋章、背後に風景が広がる。エフモントは小さな物をつまんでいる。", "note": "エフモントは現在のオランダ西部アルクマールの政界の有力者で、この作品を含む4点の肖像画が現存している。男性の肖像画では社会的地位や功績を伝えることが重要だった。", "twist": "背後の景色は、彼が管理していた土地を示唆しているのかもしれず、つまんでいるのは「祈祷用の木の実」と呼ばれた小さな彫刻かもしれない。", "talk": "あなたが肖像画に何か1つ持たせるなら、何を持つ?", "buzz": 4, "reason": "手の中の小さな物や背景の風景に意味がありそうという「読み解き」がしやすい", "source": [40]}, {"no": 48, "section": "IV 肖像芸術の隆盛", "title": "ジャコモ・ディ・ジョヴァンニ・ダントニオ・ロイアーニの肖像(?)", "who": "バロンチェッリの肖像の画家(Master of the Baroncelli Portraits)", "date": "1498–1499年頃", "look": "衣服と帽子は大まかなスケッチだが、目の周りのくぼみやしわ、こけた頬、わずかに開いた口元は入念に描かれている。", "note": "作者はブルッヘ(ブリュージュ)で1480年代から90年代に活動した画家。バロンチェッリというイタリア人銀行家とその妻の肖像画の作者であることから、この名で呼ばれる。おそらく絵画のための習作で、モデルはブルッヘやアントウェルペンで商業を営んだイタリア人実業家と分かっている。", "twist": "画家は名前が分からず、有名な依頼主の名で呼ばれている。衣服がスケッチ止まりなのは、ごく短い時間で素描しなければならなかったからかもしれない。", "talk": "服は手を抜いて、顔だけ念入りに描く。あなたが画家ならどこに時間をかける?", "buzz": 3, "reason": "名無しの画家という呼び名と、顔だけ描き込む理由の想像", "source": [41]}, {"no": 49, "section": "IV 肖像芸術の隆盛", "title": "フランソワ1世の肖像", "who": "ティツィアーノ・ヴェチェッリオ(Pieve di Cadore, 1488/1490 – Venice, 1576)", "date": "1538年頃", "look": "顔は横向きの肖像を参考にしつつ、胴体は角度を変えた四分の三正面観になっていて、動きがある。", "note": "ヴェネツィアの詩人ピエトロ・アレティーノがフランソワ1世(在位1515–1547年)に贈るため、ティツィアーノに依頼したものと考えられている。君主にふさわしい威厳と生命感を表したこの作品は、フランソワ1世の最も有名な肖像画となり、後世に多大な影響を及ぼした。", "twist": "ティツィアーノは20年余り前に王に会ったことがあったが、この制作では再会の機会がなく、1537年にチェッリーニが作った王の横顔の肖像メダルを参考にした。", "talk": "実物に会わずに描いた肖像、あなたはどこまで「本人らしさ」を感じる?", "buzz": 5, "reason": "本人に会えずメダルを見て描いたのに最も有名な肖像になったという逆転", "source": [42]}, {"no": 50, "section": "IV 肖像芸術の隆盛", "title": "メダル 表:ルドヴィコ・スフォルツァ(1451–1508年) 裏:騎兵隊の行進", "who": "Cristoforo Foppa または Caradosso(Mondenico, circa 1452 – Rome, 1526/1527)に基づく", "date": "15世紀", "look": "裏面に騎兵隊の行進の場面。", "note": "レオナルドのパトロンとしてよく知られるミラノ公ルドヴィコ・スフォルツァ(在位1494–1499年)のメダル。裏面は、ルドヴィコが1488年にジェノヴァを占領したことを示唆する場面で、甥のジャン・ガレアッツォ・スフォルツァがジェノヴァの代表団を迎える様子。ルドヴィコは若くして公位についたジャン・ガレアッツォの摂政として事実上ミラノを統治していた。", "twist": null, "talk": "自分の功績を裏面に刻むなら、どんな場面にする?", "buzz": 2, "reason": "政治的背景の説明が中心", "source": [45]}, {"no": 51, "section": "IV 肖像芸術の隆盛", "title": "女性の肖像、通称《美しきフェロニエール》", "who": "ロンバルディアの画家(Lombard painter)", "date": "1500–1512年頃", "look": "横顔の肖像で、フランス風の服装をしている。", "note": "ルイ12世(在位1498–1515年)の治世に流行したフランス風の服装だが、横顔の肖像形式や板の材質から、ミラノ公国があった北イタリアのロンバルディアの画家と推測されている。ミラノ公国は1499年から1512年までフランスの支配下にあり、モデルは当地に住んでいたフランス人女性かもしれない。", "twist": "17〜18世紀に「美しきフェロニエール」と呼ばれていたのは、この横顔の作品で、レオナルドの絵(no.56)ではなかった。18世紀末に王室コレクションがルーヴルに集められた頃に呼び名が混同され、レオナルドの絵が通称になった。", "talk": "有名な呼び名がうっかり別の絵に付いてしまった。あなたなら元に戻すべきだと思う?", "buzz": 5, "reason": "呼び名の取り違えで、横顔の絵が本家の名前を奪われたという逸話", "source": [43, 48]}, {"no": 52, "section": "IV 肖像芸術の隆盛", "title": "ベアトリーチェ・デステ", "who": "ジャン・クリストフォロ・ロマーノ(Rome?, circa 1465 – Loreto, 1512)", "date": "1490–1491年頃", "look": "胸にエステ家とスフォルツァ家のエンブレムが組み合わされている。髪型と額に巻いた細い飾り紐は1490年代のミラノで流行したもの。", "note": "フェッラーラ公の娘ベアトリーチェ(1475–1497年)は、1491年に15歳でミラノのルドヴィコ・スフォルツァのもとに嫁いだ。胸像は結婚に際し、ベアトリーチェから両親に贈るために作られたと推測されている。作者は詩人にして古代美術の目利きでもあった評判の彫刻家。", "twist": "胸のエンブレムが、婚姻を通じた両家の同盟関係を示している。同じ髪型や飾り紐が、レオナルドの《美しきフェロニエール》(no.56)にも見られる。", "talk": "15歳で外国へ嫁ぐ人が両親に贈る胸像。あなたなら何を贈る?", "buzz": 3, "reason": "結婚の同盟を象徴するエンブレムと、レオナルドへのつながり", "source": [44]}, {"no": 53, "section": "IV 肖像芸術の隆盛", "title": "メダル 表:ウルビーノ公妃エリザベッタ・ゴンザーガ(1471–1526年) 裏:逃げ去る「運命」", "who": "Adriano Fiorentino(Florence, 1440 – Florence, 1499)に基づく", "date": "1500–1515年", "look": "表の髪型や首飾りの巻き方は1490年代に北イタリアで流行したもので、レオナルドの《美しきフェロニエール》と共通する。", "note": "マントヴァ侯の娘でウルビーノ公に嫁いだエリザベッタ・ゴンザーガは、高い教養を身につけた典型的なルネサンスの貴婦人だった。", "twist": "裏面の図像は研究者たちを悩ませてきた。当初は不運を表すとされたが、ギリシア神話のダナエの可能性も指摘され、表裏の関係は今も解明されていない。", "talk": "この裏面、「運命」と「ダナエ」、あなたならどっちに見える?", "buzz": 4, "reason": "研究者も解けていない謎の図像", "source": [45]}, {"no": 54, "section": "IV 肖像芸術の隆盛", "title": "メダル 表:ミラノ公妃イザベッラ・ダラゴーナ(1470–1524年) 裏:シュロの木を前にした裸体の女性", "who": "ジャン・クリストフォロ・ロマーノ(Rome?, circa 1465 – Loreto, 1512)に基づく", "date": "1507年", "look": "裏面にシュロの木を前にした裸体の女性。", "note": "ナポリ王の娘イザベッラ・ダラゴーナは、1489年にミラノ公ジャン・ガレアッツォ・スフォルツァに嫁ぎ、ミラノ公妃となった。裏面のヌードの女性像は、おそらく「美徳」の擬人像で、シュロの木は「美徳」や「道徳の勝利」の象徴として描かれることがあった。", "twist": "彼女を《美しきフェロニエール》のモデルと考える研究者もいたが、容貌が明確に分かる肖像画が現存せず、確証が得られていない。", "talk": "この女性をレオナルドの絵のモデルだと思う?根拠はなくても直感でどう?", "buzz": 3, "reason": "モデル候補の一人という立ち位置のつなぎの話題", "source": [45, 49]}, {"no": 55, "section": "IV 肖像芸術の隆盛", "title": "ビアンカ・マリア・スフォルツァの肖像", "who": "Bernardino de' Conti(Castelseprio, 1470 – Pavia, 1523)、アンブロージョ・デ・プレディス(Giovanni Ambrogio de Predis、Milan, circa 1455 – Milan, 1509)の原作に基づく(?)", "date": "1492–1493年頃", "look": "髪型、衣服、アクセサリーは1490年代にミラノで流行したもので、レオナルドの《美しきフェロニエール》のファッションと一致する。", "note": "ビアンカ・マリアは1494年、21歳でマクシミリアン1世(1508年に神聖ローマ皇帝に即位)に嫁いだ。この作品は、画家アンブロージョ・デ・プレディスが彼女の素描をもとに制作した肖像画のうちの1点を模写したものと、おそらく考えられている。", "twist": "マクシミリアン1世は結婚の2年前に、ミラノの画家にひそかに彼女の素描を描かせていた(この素描は現存しない)。", "talk": "お見合いの前に、こっそり似顔絵を用意されたらどう思う?", "buzz": 4, "reason": "結婚前にこっそり素描を描かせたという、人間くさい逸話", "source": [46]}, {"no": 56, "section": "レオナルド", "title": "女性の肖像、誤って付された別称《美しきフェロニエール》", "who": "レオナルド・ダ・ヴィンチ(Vinci, 1452 – Amboise, 1519)", "date": "1490–1497年頃", "look": "女性の頭と体がごくわずかに反対を向き、今まさにこちらを向きかけているような動きがある。視線は私たちを見返しているようで、右側か背後を見ているようにも見える。前景に石の欄干がある。", "note": "レオナルドは1482年、30歳でミラノのルドヴィコ・スフォルツァに仕えるため移住し、1499年まで活動した。この作品はミラノ時代後半に描かれたと推測され、当時は横顔が主流だったのに、北方で発展した四分の三正面観を用いた。モデルはルドヴィコの愛妾ルクレツィア・クリヴェッリとする見方を現在の研究者の多くが支持しているが、決定的な証拠はない。", "twist": "2014–2015年の科学調査で、レオナルドが制作中に後頭部・背中・首の輪郭をわずかに修正し、右目の瞳をほんの少し左にずらしたことが分かった。また「美しきフェロニエール」はフランソワ1世の愛妾とされるが、今日の歴史学では王の死後に作り上げられた架空の人物と考えられていて、この通称は誤り(19世紀初めにアングルの素描に基づいて作られた版画の誤った銘文が、広まるきっかけの一つ)。", "talk": "この視線、あなたには誰に向けられているように見える?", "buzz": 5, "reason": "視線をずらす修正、誤った呼び名が定着した経緯、モデルの謎という盛りだくさんの話", "source": [47, 48, 49, 50], "sub_notes": {"髪型・服": "額の中央で分けた髪を後ろで一つにまとめる髪型、ボンネット、額の飾り紐は1490年代のミラノやマントヴァの流行。額に宝石を1つあしらう飾り紐は15世紀末のイタリアで「レンツァ」と呼ばれたが、レオナルドの絵が19世紀初めに誤って「美しきフェロニエール」と呼ばれて有名になるにつれ、1830年代にフランスで再流行し「フェロニエール」と呼ばれるようになった。"}}], "sections": {"I 旅": "人も物も芸術家も、国境を越えて動いた時代です。北の画家はアルプスを越えてイタリアに学びに行き、王は居城を移り歩いたため、持ち運べるタペストリーや長持が発達しました。入市式の記念メダルが洗練されたのも、旅の副産物です。", "II 技法の革新と洗練": "油彩、時計、版画、やきものと、技術の進歩が美術を変えた章です。1枚の原版から何枚も刷れる版画が、ラファエロの構想を陶器やエマイユ（金属に絵付けして焼く技法）にまで広げました。パリシーの生き物そっくりの陶器や、古代から復活したロストワックス鋳造（蝋の原型からブロンズを作る方法）の話も出てきます。", "III 古代へのまなざし": "古代ギリシア・ローマの文化を手本にし直す章です。オウィディウス『変身物語』など神話のテキストと版画の挿絵が、絵や彫刻の種になりました。芸術家は古代遺跡や彫像を素描して学び、ブロンズ小像の復活や贋作づくりにまで広がります。", "IV 肖像芸術の隆盛": "人文主義者が「個人」という考え方を育て、肖像画が王侯貴族から中産階級へ広がった章です。ネーデルラントで発達した斜め向きの四分の三正面観が、横顔に代わってイタリアでも主流になりました。レオナルドやティツィアーノは、姿勢や視線で内面の感情まで描こうとしています。", "レオナルド": "《美しきフェロニエール》は本展で初来日します。レオナルドの真筆とされる絵画は15点ほどしか現存せず、うち5点をルーヴルが所蔵しています。同館からレオナルドの作品が来日するのは、1974年の《モナ・リザ》以来、約半世紀ぶりとされます。"}, "tabs": {"I 旅": "I 旅", "II 技法の革新と洗練": "II 技法", "III 古代へのまなざし": "III 古代", "IV 肖像芸術の隆盛": "IV 肖像", "レオナルド": "レオナルド"}, "bridge": {"chapters": [{"sec": "I 旅", "pre": "①", "pre_title": "視野の拡大", "hall": "第I章「旅」", "q": "ゾウとサイ。見たことのない動物を、ヨーロッパの人々はどう形にしたのでしょう。", "a": "デューラーは実物を見ないまま、文章とスケッチだけを頼りにサイを描きました。その版画が各地に広まっています。一方、ゾウはドイツ中部ヘッセン城の庭園にあった噴水の一部で、異国の動物は王侯貴族に好まれた装飾モチーフでした。", "works": [3, 4, 1]}, {"sec": "II 技法の革新と洗練", "pre": "②", "pre_title": "印刷による伝播", "hall": "第II章「技法の革新と洗練」", "q": "ひとつの図像が、版画、エマイユ、ブロンズ、陶器へと姿を変えていきます。会場でいくつ見つけられるでしょう。", "a": "ラファエロの素描に基づく版画が、エマイユの丸皿（13）の着想になり、《棘に傷つくヴィーナス》の版画はブロンズ小像（17）の元ネタになっています。陶器の丸皿（15）の中央のヴィーナスも、有名な版画の転用です。《パリスの審判》（19）は、元の素描が失われたため、この版画が手がかりとして参照され続け、19世紀のマネ《草上の昼食》にも着想を与えたといわれます。", "works": [19, 13, 15, 17]}, {"sec": "III 古代へのまなざし", "pre": "③", "pre_title": "古代への回帰", "hall": "第III章「古代へのまなざし」", "q": "古代の女神を描いたはずなのに、どこかが違う作品があります。何が違うか、探してみてください。", "a": "1509年にローマで発見されたヴィーナス像を元にした版画（25）ですが、髪、首飾り、布は古代の女神ではなく、聖書のマグダラのマリアの特徴です。古代の姿に、キリスト教の図像が重ねられています。", "works": [25]}, {"sec": "IV 肖像芸術の隆盛", "pre": "④", "pre_title": "個人への関心", "hall": "第IV章「肖像芸術の隆盛」", "q": "少女の像は、なぜ大理石でつくられたのでしょう。", "a": "耐久性にすぐれた大理石が使われていることから、おそらく少女の亡きあと、その想い出をとどめるために制作されたものと考えられています（44）。肖像が「個人を残す」ためのものだったことが、よく表れています。", "works": [44]}], "chain": {"title": "ひとつの図像の旅", "lead": "ラファエロの素描や古代の彫刻は、版画になって各地へ広まり、別の素材の作品の元ネタになりました。会場の作品をたどると、その道すじが見えてきます。", "steps": [{"label": "古代の彫刻・ラファエロの素描", "text": "1509年にローマで発見されたヴィーナス像。ラファエロの素描（失われたものもある）。", "works": []}, {"label": "版画になる", "text": "複製して、ヨーロッパ各地に広める。", "works": [25, 19, 16]}, {"label": "別の素材へ", "text": "エマイユの皿、陶器の丸皿、ブロンズの小像の元ネタになる。", "works": [13, 15, 17]}], "foot": "16は、公式ガイドに解説のない作品です。15・17の解説に、元ネタの版画として登場します。"}}, "images": {"1": {"src": "images/01_damascus.jpg", "note": ""}, "4": {"src": "images/04_durer_rhinoceros.jpg", "note": "画像はワシントン国立美術館所蔵の1515年の木版で、ルーヴル所蔵の1枚ではありません。"}, "31": {"src": "images/31_botticelli.jpg", "note": ""}, "34": {"src": "images/34_cranach.jpg", "note": ""}, "49": {"src": "images/49_titian.jpg", "note": ""}, "51": {"src": "images/51_lombard.jpg", "note": "額縁ごとの写真です。"}, "56": {"src": "images/56_leonardo.jpg", "note": ""}}};
+var KEY = "louvre_day_v1";
+var state = {found:{}, fav:null};
+try{ var raw = localStorage.getItem(KEY); if(raw){ var p = JSON.parse(raw); if(p && p.found) state = p; } }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+var ORDER = ["I 旅","II 技法の革新と洗練","III 古代へのまなざし","IV 肖像芸術の隆盛","レオナルド"];
+var ROMAN = {"I 旅":"I","II 技法の革新と洗練":"II","III 古代へのまなざし":"III","IV 肖像芸術の隆盛":"IV","レオナルド":"★"};
+var TITLE = {"I 旅":"旅","II 技法の革新と洗練":"技法の革新と洗練","III 古代へのまなざし":"古代へのまなざし","IV 肖像芸術の隆盛":"肖像芸術の隆盛","レオナルド":"レオナルド"};
+var byNo = {}; DATA.works.forEach(function(w){ byNo[w.no]=w; });
+var filter = "all";
+var BR = {}; DATA.bridge.chapters.forEach(function(c){ BR[c.sec] = c; });
+var PRE = {"I 旅":"①","II 技法の革新と洗練":"②","III 古代へのまなざし":"③","IV 肖像芸術の隆盛":"④","レオナルド":"④"};
+function jumps(ws){ return ws.length ? '<div class="jumps">'+ws.map(function(n){return '<button data-g="'+n+'">'+n+'</button>';}).join("")+'</div>' : ""; }
+function bridgeHtml(sec, si){
+  var c = BR[sec]; if(!c) return "";
+  return '<div class="bridge"><span class="lbl">予習メモ '+c.pre+'「'+esc(c.pre_title)+'」とのつながり</span><p class="q">'+esc(c.q)+'</p>'
+    + '<button class="ansbtn" data-b="'+si+'" aria-expanded="false">答え合わせ</button>'
+    + '<div class="ans" id="ans'+si+'" hidden><p style="margin:0">'+esc(c.a)+'</p>'+jumps(c.works)+'</div></div>';
+}
+function chainHtml(){
+  var c = DATA.bridge.chain;
+  var h = '<details class="panel chain"><summary>つながりマップ：'+esc(c.title)+'</summary><div class="body"><p style="margin:0 0 8px">'+esc(c.lead)+'</p>';
+  c.steps.forEach(function(st, i){
+    h += '<div class="st"><div class="dot">'+(i+1)+'</div><div><b>'+esc(st.label)+'</b><div style="font-size:.9rem">'+esc(st.text)+'</div>'+jumps(st.works)+'</div></div>';
+    if(i < c.steps.length-1) h += '<div class="arrow">↓</div>';
+  });
+  return h + '<p class="foot">'+esc(c.foot)+'</p></div></details>';
+}
+
+function stars(n){ var s=""; for(var i=0;i<5;i++) s += (i<n?"★":"☆"); return s; }
+
+function card(w){
+  var si = ORDER.indexOf(w.section);
+  var ng = !!w.no_guide;
+  var h = '<article class="card'+(ng?' noguide':'')+'" id="w'+w.no+'" data-no="'+w.no+'" data-s="'+si+'" data-buzz="'+(w.buzz||0)+'">';
+  h += '<div class="head"><div class="num">'+w.no+'</div><div><h3>'+esc(w.title)+'</h3><p class="meta"><span class="chip2">予習メモ '+PRE[w.section]+'</span>'+esc(w.who)+(w.date?' ／ '+esc(w.date):'')+'</p></div></div>';
+  var im = DATA.images[String(w.no)];
+  if(im){ h += '<figure class="fig" style="margin-bottom:0"><img src="'+esc(im.src)+'" alt="'+esc(w.title)+'" loading="lazy">'+(im.note?'<figcaption>'+esc(im.note)+'</figcaption>':'')+'</figure>'; }
+  if(ng){
+    h += '<div class="blk"><p class="note-only">公式ガイドに、この作品の解説はありません。'+(w.number_inferred?'番号は目安です。':'')+'</p></div>';
+  } else {
+    if(w.look) h += '<div class="blk"><span class="lbl">見た目</span><p>'+esc(w.look)+'</p></div>';
+    if(w.note) h += '<div class="blk"><span class="lbl">背景</span><p>'+esc(w.note)+'</p></div>';
+    if(w.twist){
+      h += '<button class="reveal" aria-expanded="false" data-r="'+w.no+'">種明かしを見る</button>';
+      h += '<div class="twist" id="t'+w.no+'" hidden><span class="lbl">種明かし</span><p style="margin:0">'+esc(w.twist)+'</p></div>';
+    }
+    if(w.sub_notes){
+      Object.keys(w.sub_notes).forEach(function(k){
+        h += '<div class="sub"><details><summary>'+esc(k)+'</summary><p style="margin:4px 0 0">'+esc(w.sub_notes[k])+'</p></details></div>';
+      });
+    }
+    if(w.talk) h += '<div class="talk"><span class="lbl">話してみる</span>'+esc(w.talk)+'</div>';
+  }
+  h += '<div class="acts"><button class="found-btn" data-f="'+w.no+'" aria-pressed="false">見つけた</button>'
+     + '<button class="fav-btn" data-v="'+w.no+'" aria-pressed="false">あなたの1点</button>'
+     + (w.buzz?'<span class="stars">つい話したくなる度<br><b>'+stars(w.buzz)+'</b></span>':'') + '</div>';
+  return h + '</article>';
+}
+
+function render(){
+  var out = "";
+  ORDER.forEach(function(sec, si){
+    var ws = DATA.works.filter(function(w){ return w.section===sec; });
+    if(!ws.length) return;
+    out += '<section class="secwrap" data-sec="'+si+'"><header class="sec" data-s="'+si+'"><div class="roman serif">'+ROMAN[sec]+'</div><h2 class="serif">'+esc(TITLE[sec])+'</h2><p>'+esc(DATA.sections[sec]||"")+'</p>'+bridgeHtml(sec, si)+'</header>';
+    ws.forEach(function(w){ out += card(w); });
+    out += '</section>';
+  });
+  out += '<p class="empty" id="empty" hidden>この絞り込みに当てはまる作品は、まだありません。</p>';
+  document.getElementById("list").innerHTML = out;
+  document.getElementById("chain").innerHTML = chainHtml();
+
+  var tb = '<button class="tab" data-t="all" aria-pressed="true">すべて</button>';
+  ORDER.forEach(function(sec, i){ tb += '<button class="tab" data-t="s'+i+'" aria-pressed="false">'+esc(DATA.tabs[sec])+'</button>'; });
+  tb += '<button class="tab" data-t="hot" aria-pressed="false">ネタ度 高</button><button class="tab" data-t="found" aria-pressed="false">見つけた</button>';
+  document.getElementById("tabs").innerHTML = tb;
+
+  var g = ""; for(var n=1;n<=56;n++) g += '<button data-g="'+n+'">'+n+'</button>';
+  document.getElementById("grid").innerHTML = g;
+  refresh(); applyFilter();
+}
+
+function refresh(){
+  var cnt = Object.keys(state.found).filter(function(k){return state.found[k];}).length;
+  document.getElementById("cnt").textContent = cnt;
+  document.getElementById("pct").textContent = Math.round(cnt/56*100)+"%";
+  document.getElementById("barfill").style.width = (cnt/56*100)+"%";
+  var fl = document.getElementById("favline");
+  if(state.fav && byNo[state.fav]) fl.innerHTML = 'あなたの1点：<strong>'+state.fav+'　'+esc(byNo[state.fav].title)+'</strong>';
+  else fl.textContent = "「あなたの1点」は、まだ決まっていません。";
+  document.querySelectorAll(".card").forEach(function(c){
+    var n = c.getAttribute("data-no");
+    var f = !!state.found[n], v = String(state.fav)===n;
+    c.classList.toggle("found", f);
+    var fb = c.querySelector(".found-btn"), vb = c.querySelector(".fav-btn");
+    fb.setAttribute("aria-pressed", f); fb.textContent = f ? "✓ 見つけた" : "見つけた";
+    vb.setAttribute("aria-pressed", v); vb.textContent = v ? "♥ あなたの1点" : "あなたの1点";
+  });
+  document.querySelectorAll("#grid button").forEach(function(b){
+    var n = b.getAttribute("data-g");
+    b.classList.toggle("f", !!state.found[n]);
+    b.classList.toggle("v", String(state.fav)===n);
+  });
+}
+
+function applyFilter(){
+  var shown = 0;
+  document.querySelectorAll(".card").forEach(function(c){
+    var n = c.getAttribute("data-no"), s = c.getAttribute("data-s"), b = +c.getAttribute("data-buzz");
+    var ok = filter==="all" || filter==="s"+s || (filter==="hot" && b>=4) || (filter==="found" && state.found[n]);
+    c.hidden = !ok; if(ok) shown++;
+  });
+  document.querySelectorAll(".secwrap").forEach(function(sw){
+    var any = sw.querySelectorAll(".card:not([hidden])").length>0;
+    sw.querySelector(".sec").hidden = !any || filter==="hot" || filter==="found";
+  });
+  document.getElementById("empty").hidden = shown>0;
+  document.querySelectorAll(".tab").forEach(function(t){ t.setAttribute("aria-pressed", t.getAttribute("data-t")===filter); });
+}
+
+document.addEventListener("click", function(e){
+  var t = e.target.closest("button"); if(!t) return;
+  if(t.hasAttribute("data-t")){ filter = t.getAttribute("data-t"); applyFilter(); window.scrollTo({top:document.getElementById("tabs").offsetTop-4}); return; }
+  if(t.hasAttribute("data-b")){
+    var bi = t.getAttribute("data-b"), ab = document.getElementById("ans"+bi);
+    var op = ab.hidden; ab.hidden = !op; t.setAttribute("aria-expanded", op);
+    t.textContent = op ? "答え合わせを閉じる" : "答え合わせ"; return;
+  }
+  if(t.hasAttribute("data-r")){
+    var n = t.getAttribute("data-r"), box = document.getElementById("t"+n);
+    var open = box.hidden; box.hidden = !open; t.setAttribute("aria-expanded", open);
+    t.textContent = open ? "種明かしを閉じる" : "種明かしを見る"; return;
+  }
+  if(t.hasAttribute("data-f")){ var n1 = t.getAttribute("data-f"); state.found[n1] = !state.found[n1]; save(); refresh(); if(filter==="found") applyFilter(); return; }
+  if(t.hasAttribute("data-v")){ var n2 = t.getAttribute("data-v"); state.fav = (String(state.fav)===n2) ? null : n2; if(state.fav) state.found[n2] = true; save(); refresh(); return; }
+  if(t.hasAttribute("data-g")){
+    var n3 = t.getAttribute("data-g"); filter = "all"; applyFilter();
+    var c = document.getElementById("w"+n3);
+    if(c){ c.scrollIntoView({behavior:"smooth", block:"start"}); c.classList.add("pulse"); setTimeout(function(){ c.classList.remove("pulse"); }, 1600); }
+  }
+});
+render();
+</script>
+</body>
+</html>
