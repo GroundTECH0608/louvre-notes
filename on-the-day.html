@@ -150,6 +150,7 @@ body{background:radial-gradient(130% 50% at 50% 0%,#33200f 0%,#1a110b 60%) fixed
 .fig img{border:2px solid #c99a2e;padding:5px;background:#0d0805;box-shadow:0 0 0 1px #5a431d,0 14px 28px #000a;border-radius:2px}
 .num,.tab[aria-pressed="true"],.acts .fav-btn[aria-pressed="true"],.bridge .ansbtn[aria-expanded="true"]{color:#1a1210}
 .prog,details.panel{background:#221710;border:1px solid #3f2d20}
+.prog .bar,#pct{display:none}
 .tabs{background:#1a110b}
 .talk{background:#ffffff0d}
 .credit a,.credit a:visited,.credit a:link{color:#e8bb55;text-decoration:underline}
@@ -165,7 +166,7 @@ body{background:radial-gradient(130% 50% at 50% 0%,#33200f 0%,#1a110b 60%) fixed
 </header>
 
 <section class="prog" aria-label="進み具合">
-  <div class="row"><div><b id="cnt">0</b><small> ／ 56 見つけた</small></div><small id="pct"></small></div>
+  <div class="row"><div><b id="cnt">0</b><small> 点 見つけた</small></div><small id="pct"></small></div>
   <div class="bar"><i id="barfill"></i></div>
   <div class="favline" id="favline">「あなたの1点」は、まだ決まっていません。</div>
 </section>
