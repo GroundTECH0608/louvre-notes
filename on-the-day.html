@@ -219,7 +219,7 @@ var PRE = {"I 旅":"①","II 技法の革新と洗練":"②","III 古代への�
 function jumps(ws){ return ws.length ? '<div class="jumps">'+ws.map(function(n){return '<button data-g="'+n+'">'+n+'</button>';}).join("")+'</div>' : ""; }
 function bridgeHtml(sec, si){
   var c = BR[sec]; if(!c) return "";
-  var h = '<div class="bridge"><span class="lbl">まとめ '+c.pre+'「'+esc(c.pre_title)+'」とのつながり</span>';
+  var h = '<div class="bridge"><span class="lbl">AI君からの問題 ／ まとめ '+c.pre+'「'+esc(c.pre_title)+'」</span>';
   c.items.forEach(function(it, j){
     var id = si+"_"+j;
     h += '<div class="bq"><p class="q">'+esc(it.q)+'</p>'
