@@ -58,6 +58,13 @@ details.panel[open]>summary::after{content:"－"}
 .tl li:first-child{border-top:0}
 .tl time{font-weight:800;color:var(--wine);font-variant-numeric:tabular-nums}
 .panel .foot{margin:10px 0 0;color:var(--sub);font-size:.82rem}
+details.sub{border-top:1px solid var(--line)}
+details.sub:first-of-type{border-top:0}
+details.sub>summary{list-style:none;padding:10px 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;min-height:44px;font-size:.95rem}
+details.sub>summary::-webkit-details-marker{display:none}
+details.sub>summary::after{content:"＋";color:var(--gold)}
+details.sub[open]>summary::after{content:"－"}
+details.sub>.tl{padding-bottom:6px}
 .grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
 .grid button{aspect-ratio:1;border:1px solid var(--line);background:transparent;border-radius:10px;font-weight:700;font-size:.85rem;padding:0;min-height:0}
 .grid button.f{border-color:var(--gold);color:var(--gold)}
@@ -206,14 +213,36 @@ body{background:radial-gradient(130% 50% at 50% 0%,#33200f 0%,#1a110b 60%) fixed
 </section>
 
 <details class="panel">
-  <summary>回り方（15:00入場の場合）</summary>
+  <summary>回り方（滞在時間ごと）</summary>
   <div class="body">
-    <ol class="tl">
-      <li><time>15:00</time><span>まず1周、流して見る（約20分）。気になった作品の番号だけ覚えておく。</span></li>
-      <li><time>15:20</time><span>2周目。気になった3点前後の前で、このメモを開く（約70分）。</span></li>
-      <li><time>16:30</time><span>レオナルド《女性の肖像》（56）を落ち着いて。余裕があれば、好きな作品へもう一度。</span></li>
-      <li><time>17:00</time><span>退出。感想は「あなたの1点」から。</span></li>
-    </ol>
+    <details class="sub">
+      <summary>1時間の場合</summary>
+      <ol class="tl">
+        <li><time>0:00</time><span>まず1周、流して見る（約20分）。気になった作品の番号だけ覚えておく。</span></li>
+        <li><time>0:20</time><span>2周目。気になった2点前後の前で、このメモを開く（約25分）。</span></li>
+        <li><time>0:45</time><span>レオナルド《女性の肖像》（56）を落ち着いて（約10分）。</span></li>
+        <li><time>0:55</time><span>退出。感想は「あなたの1点」から。</span></li>
+      </ol>
+    </details>
+    <details class="sub" open>
+      <summary>2時間の場合</summary>
+      <ol class="tl">
+        <li><time>0:00</time><span>まず1周、流して見る（約20分）。気になった作品の番号だけ覚えておく。</span></li>
+        <li><time>0:20</time><span>2周目。気になった3点前後の前で、このメモを開く（約70分）。</span></li>
+        <li><time>1:30</time><span>レオナルド《女性の肖像》（56）を落ち着いて。余裕があれば、好きな作品へもう一度。</span></li>
+        <li><time>2:00</time><span>退出。感想は「あなたの1点」から。</span></li>
+      </ol>
+    </details>
+    <details class="sub">
+      <summary>3時間の場合</summary>
+      <ol class="tl">
+        <li><time>0:00</time><span>まず1周、流して見る（約30分）。気になった作品の番号だけ覚えておく。</span></li>
+        <li><time>0:30</time><span>2周目。気になった5点前後の前で、このメモを開く（約100分）。</span></li>
+        <li><time>2:10</time><span>レオナルド《女性の肖像》（56）を落ち着いて（約30分）。</span></li>
+        <li><time>2:40</time><span>好きな作品へもう一度。または、座って休憩（約20分）。</span></li>
+        <li><time>3:00</time><span>退出。感想は「あなたの1点」から。</span></li>
+      </ol>
+    </details>
     <p class="foot">閉館は18:00（最終入場17:30）です。展示順は、公式の出品リストの順番と違うことがあります。</p>
   </div>
 </details>
