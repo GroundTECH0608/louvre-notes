@@ -63,14 +63,14 @@ details.panel[open]>summary::after{content:"－"}
 .grid button.f{border-color:var(--gold);color:var(--gold)}
 .grid button.f::after{content:"✓";position:absolute;left:50%;bottom:2px;transform:translateX(-50%);font-size:.7rem;line-height:1;color:var(--gold)}
 .grid button.v{outline:2px solid var(--wine);outline-offset:1px}
-.grid button.w::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:11px;height:13px;background:var(--ink);clip-path:polygon(0 0,100% 0,100% 100%,50% 68%,0 100%)}
+.grid button.w::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:11px;height:13px;background:#c9a8ff;clip-path:polygon(0 0,100% 0,100% 100%,50% 68%,0 100%)}
 .grid button{position:relative}
 .grid .sl{position:absolute;left:3px;top:6px;bottom:6px;display:flex;gap:1px;pointer-events:none}
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;flex-direction:column;gap:8px;padding:8px max(16px,calc((100vw - 600px)/2 + 16px)) calc(8px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 18px #0004}
 .dock .dockrow{display:flex;gap:8px}
-.dock .wantmain{min-height:52px;border-radius:12px;border:1.5px solid var(--ink);background:transparent;font-size:1rem;font-weight:800;color:var(--ink)}
-.dock .wantmain[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.dock .wantmain:disabled{opacity:.5;border-color:var(--line)}
+.dock .wantmain{min-height:52px;border-radius:12px;border:1.5px solid #c9a8ff;background:#c9a8ff26;font-size:1rem;font-weight:800;color:#c9a8ff}
+.dock .wantmain[aria-pressed="true"]{background:#c9a8ff;color:#1a110b}
+.dock .wantmain:disabled{opacity:.55;border-color:var(--line);background:transparent;color:var(--sub)}
 .dock .dockrow button{flex:1;min-height:46px;border-radius:12px;border:1.5px solid var(--line);background:transparent;font-size:.86rem;font-weight:700;color:var(--ink)}
 body{padding-bottom:140px}
 .qprog{padding:0 16px 14px;font-size:.84rem;line-height:1.6;color:var(--sub)}
