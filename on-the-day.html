@@ -70,6 +70,8 @@ details.panel[open]>summary::after{content:"－"}
 .dock .dockrow{display:flex;gap:8px}
 .dock .wantmain{min-height:52px;border-radius:12px;border:1.5px solid #c9a8ff;background:#c9a8ff26;font-size:1rem;font-weight:800;color:#c9a8ff}
 .dock .wantmain[aria-pressed="true"]{background:#c9a8ff;color:#1a110b}
+.dock .wantmain .bm{display:inline-block;vertical-align:-3px;margin-right:8px;stroke:currentColor;fill:none}
+.dock .wantmain[aria-pressed="true"] .bm{fill:currentColor}
 .dock .wantmain:disabled{opacity:.55;border-color:var(--line);background:transparent;color:var(--sub)}
 .dock .dockrow button{flex:1;min-height:46px;border-radius:12px;border:1.5px solid var(--line);background:transparent;font-size:.86rem;font-weight:700;color:var(--ink)}
 body{padding-bottom:140px}
@@ -389,12 +391,13 @@ function findCurrent(){
   if(first && first.top > window.innerHeight * 0.85) return null;
   return best;
 }
+var BM = '<svg class="bm" viewBox="0 0 14 18" width="14" height="18" aria-hidden="true"><path d="M2 1.5h10v14.2L7 12 2 15.7z" stroke-width="1.6" stroke-linejoin="round"/></svg>';
 function updateWantMain(){
   var b = document.getElementById("wantmain"); if(!b) return;
   if(!curNo){ b.disabled = true; b.setAttribute("aria-pressed", "false"); b.textContent = "作品を開くと、「気になる」を付けられます"; return; }
   var on = !!state.want[curNo];
   b.disabled = false; b.setAttribute("aria-pressed", on);
-  b.textContent = on ? "◆ " + curNo + "番は気になる（押すと外す）" : curNo + "番を気になる";
+  b.innerHTML = BM + (on ? curNo + "番は気になる（押すと外す）" : curNo + "番を気になる");
 }
 var scrollTick = false;
 function onScrollCur(){
