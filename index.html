@@ -46,15 +46,11 @@ a.card.ext::after{content:"↗"}
 (function(){
   var me = false;
   try { me = new URLSearchParams(location.search).has("me"); } catch(e) {}
-  var d = new Date(Date.now() + 9 * 3600 * 1000);
-  var ymd = d.getUTCFullYear() * 10000 + (d.getUTCMonth() + 1) * 100 + d.getUTCDate();
-  if (me || ymd >= 20261110) {
-    var a = document.createElement("a");
-    a.className = "card";
-    a.href = "on-the-day.html" + (me ? "?me" : "");
-    a.innerHTML = "<b>この作品なに？</b><span>気になった作品があったら</span>";
-    document.getElementById("day").appendChild(a);
-  }
+  var a = document.createElement("a");
+  a.className = "card";
+  a.href = "on-the-day.html" + (me ? "?me" : "");
+  a.innerHTML = "<b>この作品なに？</b><span>気になった作品があったら</span>";
+  document.getElementById("day").appendChild(a);
 })();
 </script>
 </body>
